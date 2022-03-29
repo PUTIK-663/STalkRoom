@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>注册-小太阳聊天室</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="common-file/js/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
+    <link rel="icon" href="/web-icon.png" type="image/png" />
+    <link rel="shortcut icon" href="/web-icon.png" type="image/png"/>
+    <link rel="stylesheet" href="css/register-dec.css">
+</head>
+<body>
+    <div id="title">
+        <img src="img/mark.png" id="mark" alt="小太阳"/>
+        <div>小太阳聊天室</div>
+    </div>
+    <form method="post" action="/user/register">
+        <label for="email" class="info_form">请输入您的邮件地址用于注册账号：
+            <br/><input type="email" id="email" class="ipt_info" name="email" value="" maxlength="32"/>
+            <span class="ipt_info_tip">请输入邮箱！</span>
+        </label>
+        <br/>
+        <label for="password" class="info_form">请输入您的密码：
+            <br/><input type="password" id="password" class="ipt_info" name="password" value="" maxlength="16"/>
+            <span class="ipt_info_tip">请输入密码！</span>
+        </label>
+        <br>
+        <label for="c_password" class="info_form">请确认您的密码：
+            <br/><input type="password" id="c_password" class="ipt_info" name="c_password" value="" maxlength="16"/>
+            <span class="ipt_info_tip">输入密码不一致！</span>
+        </label>
+        <br>
+        <label for="val_code" class="info_form">请输入验证码：
+            <br/><input type="text" id="val_code" class="ipt_info" name="val_code" maxlength="4" value=""/>
+            <img id="val_code_img" alt="验证码" title="看不清？点击换一张"/>
+            <input id="date" name="date" style="display: none" value="ppp"/>
+            <span class="ipt_info_tip">请输入验证码！</span>
+        </label>
+        <br/>
+        <label for="agreement" id="lab_agreement" class="info_form">
+            <input id="agreement" name="Checkbox" type="checkbox">我已阅读并同意<a href="/talk-law.html" id="link_talkLaw">《聊天室管理办法》</a>
+        </label>
+        <br/>
+        <label for="btn_register" class="info_form">
+            <input type="button" id="btn_register" value="注册" onclick="check_input()">
+            <span id="fr_login">
+                已经拥有账号?
+                <a href="/" id="btn_login" class="btn_fr" title="join us now">马上登录</a>
+            </span>
+        </label>
+    </form>
+</body>
+<script src="js/register.js" type="text/javascript" charset="UTF-8"></script>
+</html>
