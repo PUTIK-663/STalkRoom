@@ -1,0 +1,116 @@
+html,body{
+/* 	height: 100%;
+	width: 100%; */
+	background-color: #a79c5e;
+}
+#main-field{
+	position: relative;
+    height: 400px;
+    width: 500px;
+	margin: 160px auto;
+}
+#main-frame{
+    height: 360px;
+    width: 400px;
+    margin: 0 auto;
+}
+#title{
+    height: fit-content;
+    width: fit-content;
+    margin: 20px auto;
+    font-size: 20px;
+	text-align: center;
+	color: #FFFFFF;
+}
+#mark{
+	height: 70px;
+	width: 50px;
+}
+#operation{
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    user-select: none;
+}
+input{
+	border: none;
+    outline: none;
+}
+.ipt_fr{
+	height: 40px;
+	width: 260px;
+	margin-top: 10px;
+	padding-left: 47px;
+	border-radius: 10px;
+}
+.ipt_fr:focus{
+    border-color: aqua;
+}
+.icon-ipt{
+	position: absolute;
+	height: 30px;
+	width: 30px;
+	margin: 17px 7px 0px 10px;
+}
+#ipt_number{
+	background-image: url(../img/user.svg);
+	background-repeat: no-repeat;
+}
+#ipt_password{
+	background-image: url(../img/lock.svg);
+	background-repeat: no-repeat;
+}
+.btn_fr:hover{
+    cursor: pointer;
+}
+.ipt_info_tip{
+	width: fit-content;
+	margin-top: 10px;
+	margin-bottom: -10px;
+	padding: 2px;
+	font-size: 15px;
+	color: #d43030;
+	display: none;
+}
+#btn_login{
+	height: 40px;
+	width: 307px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: 20px;
+	color: #736734;
+	border-radius: 10px;
+	background-image: linear-gradient(to right,  #dac663, #dadcdc);
+}
+#btn_login:hover{
+	color: #a79c5e;
+}
+#fr_register{
+	width: 307px;
+	text-align: center;
+}
+#btn_register{
+	padding: 0px;
+	vertical-align: text-bottom;
+	font-size: 14px;
+	color: #cfcfcf;
+	text-decoration: underline;
+	background-color: #a79c5e;
+}
+#btn_register:hover{
+	color: #4949e8;
+}
+#foot-beian{
+	position: absolute;
+	height: 50px;
+	width: 230px;
+	top: calc(100% + 50px);
+	left: calc(50% - 115px);
+/* 	top: 0px;
+	left: 0px; */
+	text-align: center;
+}
+#foot-beian a{
+	text-decoration: none;
+	color: #5a5a5a;
+}

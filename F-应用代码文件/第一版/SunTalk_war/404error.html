@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<title>HTTP状态 404- 未找到</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			html,body{
+				height: 100%;
+			}
+			#main-field{
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background-image: url(https://hnuster.site/sad.jpg);
+				background-repeat: round;
+			}
+			#main-frame{
+				position: relative;
+				height: 400px;
+				width: 500px;
+				top: calc(50% - 200px);
+				left: calc(50% - 250px);
+				background-color: #c3e8b7;
+			}
+			#tip-img{
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background-image: url(https://hnuster.site/sad.jpg);
+				background-size: cover;
+				opacity: 0.5;
+			}
+			#tip-text{
+				position: relative;
+				top: 90px;
+				left: 20px;
+				font-size: 30px;
+				font-weight: bold;
+				color: #414141;
+				z-index: 1;
+			}
+			#tip-code{
+				position: relative;
+				top: 190px;
+				left: 20px;
+				font-size: 24px;
+				font-weight: 300;
+				color: #414141;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main-field">
+			<div id="main-frame">
+				<div id="tip-img">
+					
+				</div>
+				<div id="tip-text">
+					所请求的资源不存在或者<br>请求是非法的
+				</div>
+				<div id="tip-code">
+					返回状态码：<em>404</em>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

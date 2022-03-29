@@ -1,0 +1,50 @@
+<!--本网站暂未使用任何框架，仅供学习测验使用，请勿恶意攻击-->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Keywords" content="小太阳聊天室,web聊天室,聊天室,hnuster"/>
+    <meta name="Description" content="减速带大学，欢迎您的到来！"/>
+    <title>登录-小太阳聊天室</title>
+    <link rel="icon" href="https://hnuster.site/web-icon.png" type="image/png" />
+    <link rel="shortcut icon" href="https://hnuster.site/web-icon.png" type="image/png"/>
+    <link rel="stylesheet" href="css/login-dec.css">
+</head>
+<body>
+    <div id="main-field">
+        <div id="main-frame">
+            <div id="title">
+                <img src="img/mark.png" id="mark" alt="小太阳"/>
+                <div>小太阳聊天室</div>
+            </div>
+            <div id="operation">
+                <label for="number">
+                    <i id="ipt_number" class="icon-ipt"></i>
+                    <input id="number" class="ipt_fr" type="text" placeholder="请输入账号" value="" maxlength="8"
+                           oninput="value=value.replace(/[^\d]/g,'')"/>
+                </label>
+                <br>
+                <label for="password">
+                    <i id="ipt_password" class="icon-ipt"></i>
+                    <input id="password" class="ipt_fr" type="password" placeholder="请输入密码" value="" maxlength="16"/>
+                </label>
+                <br>
+                <div id="wrong_info" class="ipt_info_tip">账号或密码错误！</div>
+                <input id="btn_login" class="btn_fr" type="button" value="登      录" onclick="check_input()"/><br>
+                <div id="fr_register">
+                    <span style="font-weight: 100;font-size: 15px;">还没有账号?</span>
+                    <a href="register.html" id="btn_register" class="btn_fr" title="join us now">马上注册</a>
+                </div>
+            </div>
+        </div>
+        <div id="foot-beian">
+            &copy; 2021 湖科带专 版权所有<br>ICP证：<a href="https://beian.miit.gov.cn">湘ICP备2021015933号</a>
+        </div>
+    </div>
+</body>
+<script src="js/sendVisitorInfo.js" type="text/javascript" charset="UTF-8"></script>
+<script src="common-file/js/jquery.min.js" type="text/javascript" charset="UTF-8"></script>
+<script src="js/login.js" type="text/javascript" charset="UTF-8"></script>
+</html>

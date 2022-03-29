@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>聊天室-小太阳聊天室</title>
+    <link rel="icon" href="img/icon_qq.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="img/icon_qq.png" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="css/copy-talk-ui-dec.css"/>
+    <script type="text/javascript" src="./js/normal.js"></script>
+</head>
+<body>
+<div id="main">
+    <!-- 顶部 -->
+    <!-- 用于简略展示用户私人信息，以及提供登出等账号操作  -->
+    <div id="top">
+        <div id="user_info" class="user_top_block">
+            <div id="portrait" style="background-image: url('http://hnuster.site/sad.jpg')" title="修改头像" onclick="modifyPortrait()"></div>
+            <div id="name">
+                李小龙
+            </div>
+            <div id="userid">
+                (uid:187256)
+            </div>
+        </div>
+        <div id="user_number_online" class="user_top_block">
+            <div id="number">
+                当前在线人数：<span>100</span>
+            </div>
+        </div>
+        <div id="user_setting" class="user_top_block">
+            <div id="setting_option">
+                <a href="/" onclick="exit()"
+                   style="font-size: 15px;font-style: normal;display: block;margin-top: 10px;
+                        text-decoration: none;">
+                    退出登录
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- 这是用来遮挡中间块的上部分 -->
+    <div id="middle_top"></div>
+    <div id="middle">
+        <div id="msg-container">
+        </div>
+    </div>
+    <div id="line" style="background-color: #7d7d7d;width: 100%;height: 1px;margin-top: 1%;"></div>
+    <div id="bottom">
+        <div id="text">
+            <div id="text_option">
+                <div id="option_face" class="option" onclick="changeElementEye('emoji')">
+                    <ul id="emoji" type="none"></ul>
+                    <script>
+                        initEmoji();
+                    </script>
+                </div>
+                <div id="option_file" class="option" onclick="launch(this.firstElementChild)">
+                    <input type="file" id="uploadFile" name="uploadFile" onchange="loadFile(this)"/>
+                </div>
+                <div id="option_picture" class="option" onclick="launch(this.firstElementChild)">
+                    <input type="file" id="uploadPic" name="uploadPic"
+                           accept="
+                               image/jpeg,image/png,image/gif" onchange="loadPic(this)"/>
+                </div>
+                <div id="optionSetting" class="option" onclick="this.style.display='none'"></div>
+            </div>
+            <div id="text_textarea" style="display: inline-block;">
+                <label>
+                    <textarea rows="5" cols="20" id="text_textarea_box" placeholder="文明聊天,从这里开始......"></textarea>
+                </label>
+            </div>
+            <div id="text_button" style="display: inline-block;">
+                <button id="send_btn" type="button"
+                        onclick="
+                                {if(document.getElementById('text_textarea_box').value!==''){
+                                    sessionListener();
+                                    send('middle_main','text_textarea_box')}
+                                else{
+                                    document.getElementById('text_textarea_box').focus();
+                                }}">
+                    发&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;送
+                </button>
+                <button id="Bye_btn" type="button"
+                        onclick="{document.getElementById('text_textarea_box').value='';
+                            document.getElementById('text_textarea_box').style.cursor = 'auto';
+                            document.getElementById('text_textarea_box').removeAttribute('disabled');
+                            document.getElementById('uploadFile').value = '';
+                            document.getElementById('uploadPic').value = '';
+                            type='txt'}">
+                    取&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;消
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="./js/websocket.js"></script>
+<script>
+    function launch(obj){
+        obj.click();
+    }
+    function loadFile(inputElement){
+        //文件大小限制50M
+        if(inputElement.files[0].size/(1024*1024)>50){
+            alert("文件大小不能超过50M！");
+            inputElement.value = "";
+        }else{
+            type = 'file';
+            let obj = document.getElementById('text_textarea_box');
+            obj.value = '['+'文件：'+inputElement.files[0].name+']';
+            obj.setAttribute("disabled","disabled");
+            obj.style.cursor = "not-allowed";
+        }
+    }
+    function loadPic(inputElement){
+        //图片大小限制10M
+        if(inputElement.files[0].size/(1024*1024)>10){
+            alert("图片大小不能超过10M！");
+            inputElement.value = "";
+        }else {
+            type = 'pic';
+            let obj = document.getElementById('text_textarea_box');
+            obj.value = '['+'图片：'+inputElement.files[0].name+']';
+            obj.setAttribute("disabled","disabled");
+            obj.style.cursor = "not-allowed";
+        }
+    }
+    setOnlineNum();
+    setInterval('setOnlineNum()',5000);
+    setInterval('sessionListener()',6000);
+</script>
+</html>

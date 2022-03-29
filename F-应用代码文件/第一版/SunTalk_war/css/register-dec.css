@@ -1,0 +1,80 @@
+/*html,body{*/
+/*    !* 	height: 100%;*/
+/*        width: 100%; *!*/
+/*    background-color: rgb(179, 169, 148);*/
+/*}*/
+form{
+    position: relative;
+    width: fit-content;
+    margin: 3% auto;
+}
+.info_form{
+    display: inline-block;
+    height: fit-content;
+    width: 320px;
+    padding: 10px;
+    font-size: 20px;
+    /*border: 1px solid black;*/
+}
+input{
+    height: 36px;
+    width: 288px;
+    margin-top: 5px;
+    padding-left: 3px;
+    font-size: 16px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.ipt_info_tip{
+    width: fit-content;
+    padding: 2px;
+    font-size: 10px;
+    color: red;
+    display: none;
+}
+#val_code{
+    width: 96px;
+}
+#val_code_img{
+    margin-left: 5px;
+    height: 36px;
+    width: 144px;
+    vertical-align: bottom;
+}
+#lab_agreement{
+    font-size: 15px;
+    color: #8d9599;
+}
+#lab_agreement #link_talkLaw{
+    color: #a79c5e;
+}
+#lab_agreement #link_talkLaw:hover{
+    color: #4949e8;
+}
+#agreement{
+    height: 15px;
+    width: 15px;
+    vertical-align: bottom;
+}
+#btn_register{
+    height: 42px;
+    width: 144px;
+}
+#btn_register:hover{
+    cursor: pointer;
+}
+#fr_login{
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: bottom;
+}
+#btn_login{
+    padding: 0;
+    vertical-align: text-bottom;
+    font-size: 14px;
+    color: #000000;
+    text-decoration: underline;
+}
+#btn_login:hover{
+    color: #4949e8;
+}
