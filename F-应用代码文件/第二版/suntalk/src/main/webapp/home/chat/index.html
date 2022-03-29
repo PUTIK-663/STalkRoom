@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>聊天室-小太阳聊天室</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/web-icon.png" type="image/png" />
+    <link rel="shortcut icon" href="/web-icon.png" type="image/png"/>
+    <link rel="stylesheet" type="text/css" href="./css/talkUi-dec.css"/>
+    <script type="text/javascript" src="/common-file/js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="main-field">
+        <div id="top">
+            <div id="userInfo" class="top-common">
+                <img id="portrait" src="http://hnuster.site/sad.jpg" alt="img"/>
+                <script>
+                    //将头像设置为正圆
+                    let p = document.getElementById("portrait");
+                    p.style.width = p.offsetHeight + "px";
+                </script>
+                <div id="nickname">
+                    我滴用户名
+                </div>
+                <div id="uid">
+                    (uid:000000)
+                </div>
+                <div id="state">
+                    在线
+                </div>
+            </div>
+            <div id="nowOnlinePeople" class="top-common">
+                当前在线人数：0
+            </div>
+            <div id="operation" class="top-common">
+                <div id="logout">退出登录</div>
+                <div id="home" onclick="window.location.href='/home/'">个人中心</div>
+            </div>
+        </div>
+        <div id="middle">
+            <div id="msg-container">
+            </div>
+        </div>
+        <div id="bottom">
+            <div id="textBar">
+                <div id="textOption">
+                    <div id="optionEmoji" class="option-class">
+                        <ul id="emoji"></ul>
+                    </div>
+                    <div id="optionSetting" class="option-class"></div>
+                </div>
+                <div id="textArea">
+                    <label for="textareaBox"></label>
+                    <textarea rows="5" cols="20" id="textareaBox" placeholder="文明聊天,从这里开始......"></textarea>
+                </div>
+                <div id="textBtn">
+                    <button id="sendBtn" type="button" onclick="send(document.getElementById('textareaBox'))">发&emsp;送</button>
+                    <button id="clearBtn" type="button">清&emsp;空</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/normal.js" type="text/javascript" charset="UTF-8"></script>
+<script src="js/websocket.js" type="text/javascript" charset="UTF-8"></script>
+<script>
+    sender=getCookie("uid");
+    document.getElementById("uid").innerText = "(uid:"+sender+")";
+    setAccountInfo(sender);
+    initEmoji(sender);
+    document.getElementById("optionEmoji").addEventListener("click",function (){
+       changeElementEye("emoji");
+    });
+    document.getElementById("textareaBox").addEventListener("click",function (){
+       document.getElementById("emoji").style.visibility="hidden";
+    });
+    if (window.document.documentElement.offsetWidth<600){
+        document.getElementById("top").style.fontSize = "0.9em";
+        document.getElementById("nickname").style.display = "none";
+        document.getElementById("uid").style.display = "none";
+        document.getElementById("logout").style.display = "none";
+    }
+</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>聊天室-插件系统</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/web-icon.png" type="image/png" />
+    <link rel="shortcut icon" href="/web-icon.png" type="image/png"/>
+</head>
+<body>
+    <p>百度自动签到</p>
+    <label for="cookie">
+        输入cookie:<br>
+        <textarea id="cookie" rows="5"></textarea><br>
+        <button type="button" onclick="submitCookie()">提交</button>
+        <button type="button" onclick="clearCookie()">清空</button>
+    </label>
+    <p id="backContent"></p>
+</body>
+<script>
+    function submitCookie() {
+        let cookie = document.getElementById("cookie").value;
+        let timestamp = Date.now().toString();
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                if(xhr.responseText!==""){
+                    document.getElementById("backContent").innerHTML
+                        = document.getElementById("backContent").innerHTML + "<br>"+xhr.responseText;
+                }
+            }
+        };
+        xhr.open("POST", "/home/plugin/service");
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send("cookieContent="+cookie+"&serviceType="+"baidu");
+    }
+    function clearCookie() {
+        document.getElementById('cookie').value = '';
+    }
+</script>
+</html>

@@ -1,0 +1,118 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+html{
+	width: 100%;
+	height: 100%;
+	background-image: linear-gradient(to bottom right,#db9f9f, #e7e7ac);
+	/*background-color: #a79c5e;*/
+}
+#main-field{
+	position: absolute;
+    width: 100%;
+	margin: 0 auto;
+}
+#main-frame{
+	position: relative;
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+	text-align: center;
+}
+#title{
+    height: fit-content;
+    width: fit-content;
+    margin: 0.7em auto;
+    font-size: 1.2em;
+	text-align: center;
+	color: #FFFFFF;
+}
+#mark{
+	height: 3.3em;
+	width: 2.4em;
+}
+#operation{
+    height: fit-content;
+    width: fit-content;
+    margin: 0 auto;
+    user-select: none;
+}
+input{
+	border: none;
+    outline: none;
+}
+.ipt_fr{
+	height: 3em;
+	width: 16em;
+	margin-top: 0.8em;
+	padding-left: 3.5em;
+	border-radius: 10px;
+}
+.ipt_fr:focus{
+    border-color: aqua;
+}
+.icon-ipt{
+	position: absolute;
+	height: 1.6em;
+	width: 1.6em;
+	margin: 1.2em 0.5em 0.8em 0.6em;
+}
+#ipt_number{
+	background-image: url(../img/user.svg);
+	background-repeat: no-repeat;
+}
+#ipt_password{
+	background-image: url(../img/lock.svg);
+	background-repeat: no-repeat;
+}
+.btn_fr:hover{
+    cursor: pointer;
+}
+.ipt_info_tip{
+	width: fit-content;
+	margin-top: 0.5em;
+	margin-bottom: -0.5em;
+	padding: 2px;
+	font-size: 0.9em;
+	color: #d43030;
+	display: none;
+}
+#btn_login{
+	height: 2.6em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-size: 1em;
+	color: #736734;
+	border-radius: 10px;
+	background-image: linear-gradient(to right,  #dac663, #dadcdc);
+}
+#btn_login:hover{
+	color: #a79c5e;
+}
+#fr_register{
+	width: 100%;
+	text-align: center;
+}
+#btn_register{
+	padding: 0;
+	vertical-align: text-bottom;
+	font-size: 1em;
+	color: #a8a8a8;
+	text-decoration: underline;
+	/*background-color: #a79c5e;*/
+}
+#btn_register:hover{
+	color: #4949e8;
+}
+#foot-beian{
+	position: absolute;
+	height: fit-content;
+	width: fit-content;
+	font-size: 1em;
+	text-align: center;
+}
+#foot-beian a{
+	text-decoration: none;
+	color: #5a5a5a;
+}
